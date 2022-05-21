@@ -56,7 +56,7 @@ func main() {
 	}
 	http.HandleFunc("/", handler)
 	log.Println("Starting server on port " + CONFIG.ListenPort)
-	log.Fatal(http.ListenAndServe(":80", nil))
+	log.Fatal(http.ListenAndServe(":" + CONFIG.ListenPort, nil))
 }
 func processData(uri string) {
 	t, parseURIError := parseURI(uri)
